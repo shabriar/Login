@@ -1,0 +1,26 @@
+﻿@model  LoginPortal.Models.Bikes
+@{
+    /**/
+
+    ViewBag.Title = "Index";
+}
+
+<h2>Bike Input Index</h2>
+@using (Html.BeginForm("Index", "Bike"))
+{
+    <div class="form-group">
+        <label for="exampleInputEmail1">Bike Model </label>
+        <input type="text" name="BikeModel" class="form-control" id="UserName" aria-describedby="emailHelp" placeholder="Enter Bike Name" required="required">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your Name with anyone else.</small>
+    </div>
+
+    <div class="form-group">
+        <label for="exampleInputEmail1">Bike Engine Cc</label>
+        <input type="number" name="BikeCc" class="form-control" id="UserEmail" aria-describedby="emailHelp" placeholder="Bike Engine Cc" required="required">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <div>
+        <button type="submit" class="btn btn-success">Submit</button>
+    </div>
+}
+

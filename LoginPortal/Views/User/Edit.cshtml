@@ -1,0 +1,37 @@
+﻿@model  LoginPortal.Models.User
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm())
+{
+
+
+<div class="form-group">
+    <label for="exampleInputEmail1"> Name </label>
+    @Html.TextBoxFor(model => model.UserName, new { @class = "form-control", @type = "text", @placeholder = "Pass word" })
+</div>
+
+    <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        @Html.TextBoxFor(model => model.UserEmail, new { @class = "form-control", @type = "text", @placeholder = "Pass word" })
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1"> Phone</label>
+        @Html.TextBoxFor(model => model.UserPhone, new { @class = "form-control", @type = "text", @placeholder = "Pass word" })
+    </div>
+
+    <div class="form-group">
+        <label for="exampleInputEmail1"> address</label>
+        @Html.TextBoxFor(model => model.UserAddress, new { @class = "form-control", @type = "text", @placeholder = "Pass word" })
+    </div>
+
+    
+
+
+    <div>
+        <button type="submit" class="btn btn-success">Edit</button>
+    </div>
+}

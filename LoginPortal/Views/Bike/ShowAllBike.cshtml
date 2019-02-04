@@ -1,0 +1,36 @@
+﻿@model  IEnumerable<LoginPortal.Models.Bikes>
+@{
+    ViewBag.Title = "ShowAllBike";
+}
+
+<h2>Show All Bikes</h2>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Bike name</th>
+            <th>Bike Engine capacity in Cc</th>
+            
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.BikeModel
+                </td>
+                <td>
+                    @item.BikeCc
+                </td>              
+                <td>
+                    <a href="@Url.Action("Edit", "Bike", new { id = item.Id })" class="btn btn-xxs fa fa-pencil"> Edit </a>
+                    <a href="@Url.Action("Delete", "Bike", new { id = item.Id })" class="btn btn-xxs fa fa-trash text-danger"> Delete </a>
+
+                </td>
+            </tr>
+        }
+    </tbody>
+
+
+</table>

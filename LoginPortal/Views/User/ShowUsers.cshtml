@@ -1,0 +1,52 @@
+﻿@model  IEnumerable<LoginPortal.Models.User>
+@{
+    ViewBag.Title = "ShowUsers";
+}
+
+<h2>ShowUsers</h2>
+
+<h2>UserList</h2>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>User name</th>
+            <th>User Email</th>
+            <th>User Phone</th>
+            <th>User Address</th>
+            <th>User Password</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.UserName
+                </td>
+                <td>
+                    @item.UserEmail
+                </td>
+                <td>
+                    @item.UserPhone
+                </td>
+                <td>
+                    @item.UserAddress
+                </td>
+                <td>
+                    @item.UserPassword
+                </td>
+                <td>
+                    @Html.DisplayFor(itemI=> item.Bikes.BikeModel) 
+                </td>
+                <td>
+                    <a href="@Url.Action("Edit", "User", new { id = item.Id })" class="btn btn-xxs fa fa-pencil"> Edit </a>
+                    <a href="@Url.Action("Delete", "User", new { id = item.Id })" class="btn btn-xxs fa fa-trash text-danger"> Delete </a>
+
+                </td>
+            </tr>
+        }
+    </tbody>
+
+
+</table>

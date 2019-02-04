@@ -1,0 +1,68 @@
+﻿@model  LoginPortal.Models.User
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@using (Html.BeginForm("Index", "User"))
+{
+
+
+    <div class="form-group">
+        <label for="exampleInputEmail1"> Name </label>
+        <input type="text" name="UserName" class="form-control" id="UserName" aria-describedby="emailHelp" placeholder="Enter User Name" required="required">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your Name with anyone else.</small>
+    </div>
+
+    <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input type="email" name="UserEmail" class="form-control" id="UserEmail" aria-describedby="emailHelp" placeholder="Enter email" required="required">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1"> Phone</label>
+        <input type="number" name="UserPhone" class="form-control" id="UserName" aria-describedby="emailHelp" placeholder="Enter phone" required="required">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your Phone with anyone else.</small>
+    </div>
+
+    <div class="form-group">
+        <label for="exampleInputEmail1"> address</label>
+        <input type="password" name="UserAddress" class="form-control" id="UserName" aria-describedby="emailHelp" placeholder="Enter email" required="required">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your address with anyone else.</small>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1"> Bike</label>
+        @Html.DropDownListFor(model=>model.BikeId,new SelectList(ViewBag.BikeList,"Id", "BikeModel"),new { @class = "form-control" })
+
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Password</label>
+        @Html.TextBoxFor(model => model.UserPassword, new { @class = "form-control", @type = "password", @placeholder = "Enter email" })
+
+
+    </div>
+
+
+    <div>
+        <button type="submit" class="btn btn-success">Submit</button>
+    </div>
+}
+
+@using (Html.BeginForm("ShowUsers", "User", FormMethod.Get))
+{
+    <table>
+        <tr>
+            <td><input type="submit" value="Show all users" /></td>
+        </tr>
+    </table>
+}
+
+@using (Html.BeginForm("ShowAllBike", "Bike", FormMethod.Get))
+{
+    <table>
+        <tr>
+            <td><input type="submit" value="Show all BIKES" /></td>
+        </tr>
+    </table>
+}
+
